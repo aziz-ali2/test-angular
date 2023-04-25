@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" id="id" name="id" [(ngModel)]="todo.id" required min="1" max="9">
+    </div>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="todo.title" required pattern="[A-Z][a-zA-Z ]{2,}">
+    </div>
+    <div class="form-group">
+      <label for="nbr">Nbr:</label>
+      <input type="number" id="nbr" name="nbr" [(ngModel)]="todo.nbr" required min="10" max="99">
+    </div>
+    <button type="submit" [disabled]="!todoForm.valid">Submit</button>
+
+  </form>
